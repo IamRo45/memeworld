@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Xmeme</title>
+	<link rel="stylesheet" href="master.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script >
+
+		//when user hits submit button this function will be executed
+		$(document).ready(function(){
+			$('#btn').click(function(){
+				
+
+				var name=$('#name').val();
+				var caption=$('#caption').val();
+				var url=$('#url').val();
+				
+				var jsonData= {'name': name, 'url': url, 'caption': caption};
+				$.ajax({
+					url: 'http://localhost:8081/memes',
+					type: 'POST',
+					contentType: 'application/json',
+					dataType: 'json',
+					data: JSON.stringify(jsonData),
+					success: function () {
+						
+						
+					},
+					error: function() {} 
+				});
+				//reload page after submit????
+				setTimeout(function(){
+							window.location.reload(true);
+						},1000);
+
+			});
+		});
+
+
+		//when page reloads this function will be executed
+		$(document).ready(function(){
+			$.ajax({
+				url: 'http://localhost:8081/memes',
+				type: 'GET',
+				success: function (result){
+					//console.log(result);
+					var i;
+					var len=result.length;
+					var text="";
+					for (i=0;i<len;i++)
+					{
+						text+="<div class=\"meme\">";
+						text+="<p class=\"memerName\">"+result[i]["name"]+"</p>";
+						text+="<p class=\"memeCaption\">"+result[i]["caption"]+"</p>";
+						text+="<img src="+result[i]["url"]+" class=\"memeImg\">";
+						text+="</div>";
+					}
+					$('.content').html(text);
+
+				},
+				error: function(error){
+					console.log(error);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="formDiv">
+			<form class="postForm">
+				<h1>MemeWorld</h1>
+				<input type="text" id="name" placeholder="Name"><br>
+				<input type="text" id="caption" placeholder="Caption"><br>
+				<input type="text" id="url" placeholder="URL"><br>
+				<input type="button" id="btn" value="Submit">
+			</form>
+		</div>
+		<div class="memeDiv">
+			<div class="content">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

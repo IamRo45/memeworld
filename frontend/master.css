@@ -1,0 +1,90 @@
+body {
+	margin: 0;
+}
+
+.container {
+	display: flex;
+	/*background-color: #6CB2BB;*/
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%);
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+
+
+}
+
+.formDiv {
+	flex: 1;
+	margin-left: 30px;
+	/*margin-right: 30px;
+	/*padding-top: 10px;*/
+
+}
+
+.postForm {
+	background-color: #3e3d3d;
+	margin: 20px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	padding-left: 40px;
+	padding-right: 60px;
+	border-radius: 5px;
+}
+
+h1{
+	text-align: center;
+	color: #fff;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+input{
+	width: 100%;
+	background: none;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	padding: 6px 15px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	color: #fff;
+	box-sizing: border-box;
+}
+
+input[type="button"]{
+	background: #bac675;
+	border:0;
+	cursor: pointer;
+	color: #3e3d3d;
+}
+
+::placeholder{
+	color: #fff;
+}
+
+.memeDiv {
+	flex: 1.5;
+	margin-left: 130px;
+}
+
+.meme {
+	padding: 10px;
+	background-color: #CECECE;
+	border-radius: 10px;
+	margin: 20px;
+	max-width: 60%;
+}
+
+.memerName {
+	font-size: 20px;
+	color: #3e3d3d;
+}
+
+.memeCaption {
+	font-size: 20px;
+	color: #3e3d3d;
+}
+
+.memeImg {
+	padding-left: 5%;
+	max-width: 90%;
+}
