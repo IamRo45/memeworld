@@ -12,4 +12,6 @@
 
 6. To test this app locally, clone the GITHUB repo and run install.sh, server_run.sh and 	    sleep.sh in the given order for configuartion.
 
+7. Link to demo video [link](https://drive.google.com/file/d/1w3OF36UuiZBDiwNY3ryfmpXnzf9CtoQX/view?usp=sharing).
+
 
